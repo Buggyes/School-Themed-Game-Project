@@ -6,12 +6,14 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D plRig;
     [SerializeField] private Animator an;
-    [SerializeField] private float jumpStr;
+    [SerializeField] private float jumpStr, speedLimit;
     [SerializeField] private bool hasAnimator;
-    private bool ableToJump, ableToDJump;
+    private bool ableToJump;
+    private int divideForce;
     public bool ableToMove;
     private void Start()
     {
+        divideForce = 1;
         if (hasAnimator == true)
         {
             an.GetComponent<Animator>();
@@ -21,41 +23,57 @@ public class PlayerJump : MonoBehaviour
     {
         if (ableToMove == true)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && ableToJump == true)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && ableToJump == true)
             {
-                plRig.velocity = new Vector2(plRig.velocity.x, jumpStr);
+                plRig.AddForce(new Vector2(plRig.velocity.x, jumpStr));
+                if (hasAnimator == true)
+                {
+                    an.SetBool("isJumping", true);
+                }
+            }
+            else if(Input.GetKey(KeyCode.UpArrow) && ableToJump == true)
+			{
+                plRig.AddForce(new Vector2(plRig.velocity.x, jumpStr/divideForce));
+                divideForce++;
+                if (hasAnimator == true)
+                {
+                    an.SetBool("isJumping", true);
+                }
+            }
+            if (plRig.velocity.y > speedLimit)
+            {
                 ableToJump = false;
-                ableToDJump = true;
-                if (hasAnimator == true)
-                {
-                    an.SetBool("IsJumping", true);
-                }
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow) && ableToDJump == true)
-            {
-                plRig.velocity = new Vector2(plRig.velocity.x, jumpStr);
-                ableToDJump = false;
-                if (hasAnimator == true)
-                {
-                    an.SetBool("IsJumping", false);
-                    an.SetBool("IsJumping", true);
-                }
-            }
+            CheckSpeed();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         foreach (ContactPoint2D hitContact in collision.contacts)
         {
-            if (hitContact.normal.y > 0 && ableToJump == false)
+            if (hitContact.normal.y > 0)
             {
                 ableToJump = true;
-                ableToDJump = false;
+                divideForce = 1;
+                plRig.velocity.y.Equals(0);
                 if (hasAnimator == true)
                 {
-                    an.SetBool("IsJumping", false);
+                    an.SetBool("isJumping", false);
                 }
             }
         }
     }
+    private void CheckSpeed()
+	{
+        if(plRig.velocity.y > 0)
+		{
+            an.SetBool("isGoingUp", true);
+            an.SetBool("isGoingDown", false);
+        }
+        else if(plRig.velocity.y < 0)
+		{
+            an.SetBool("isGoingUp", false);
+            an.SetBool("isGoingDown", true);
+        }
+	}
 }
