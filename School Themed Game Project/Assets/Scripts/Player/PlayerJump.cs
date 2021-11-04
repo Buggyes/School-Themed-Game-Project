@@ -72,6 +72,10 @@ public class PlayerJump : MonoBehaviour
         }
         else if(plRig.velocity.y < 0)
 		{
+            if(ableToJump == true)
+			{
+                ableToJump = false;
+			}
             an.SetBool("isGoingUp", false);
             an.SetBool("isGoingDown", true);
         }

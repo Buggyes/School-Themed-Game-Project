@@ -9,11 +9,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRig;
     void Update()
     {
-        if (playerRig.transform.position.y > 0)
+        if (playerRig.transform.position.y > maxNegY)
         {
             this.transform.position = new Vector3(follow.position.x, follow.position.y, this.transform.position.z);
         }
-        else if (playerRig.transform.position.y <= 0)
+        else if (playerRig.transform.position.y <= maxNegY)
         {
             this.transform.position = new Vector3(follow.position.x, maxNegY, this.transform.position.z);
         }
