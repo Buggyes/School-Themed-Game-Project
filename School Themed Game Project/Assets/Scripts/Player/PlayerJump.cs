@@ -23,15 +23,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (ableToMove == true)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && ableToJump == true)
-            {
-                plRig.AddForce(new Vector2(plRig.velocity.x, jumpStr));
-                if (hasAnimator == true)
-                {
-                    an.SetBool("isJumping", true);
-                }
-            }
-            else if(Input.GetKey(KeyCode.UpArrow) && ableToJump == true)
+            if(Input.GetKey(KeyCode.UpArrow) && ableToJump == true)
 			{
                 plRig.AddForce(new Vector2(plRig.velocity.x, jumpStr/divideForce));
                 divideForce++;
@@ -40,7 +32,11 @@ public class PlayerJump : MonoBehaviour
                     an.SetBool("isJumping", true);
                 }
             }
-            if (plRig.velocity.y > speedLimit)
+            else if(Input.GetKeyUp(KeyCode.UpArrow) && ableToJump == true && plRig.velocity.y > 0)
+			{
+                ableToJump = false;
+			}
+            if (plRig.velocity.y >= speedLimit)
             {
                 ableToJump = false;
             }
