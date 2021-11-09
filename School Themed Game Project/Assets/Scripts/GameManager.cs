@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int stage;
     private PlayerJump pj;
     private float spawnRate, timer;
-    public bool startCronometer, isFighting;
-    private bool won;
+    public bool startCronometer, isFighting, won;
     void Start()
     {
         switch(stage)

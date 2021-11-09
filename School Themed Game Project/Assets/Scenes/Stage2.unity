@@ -1188,7 +1188,7 @@ MonoBehaviour:
   bossFightWallSpawnTrigger: 102
   flyingEnFirstSpawnPos: 277
   flyingEnSecondSpawnPos: 0
-  enSpawnCd: 1
+  enSpawnCd: 2
   desactivateSpawnEnPosition: 245
   stage: 2
   startCronometer: 0

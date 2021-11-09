@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7180075793528969599}
   - component: {fileID: 7180075793528969584}
   - component: {fileID: 5093290649863237088}
+  - component: {fileID: 8253961085005321711}
   m_Layer: 7
   m_Name: FlyingBookRight
   m_TagString: Untagged
@@ -182,3 +183,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask: 0700000008000000
   target: {fileID: 7180075793528969588}
+--- !u!114 &8253961085005321711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180075793528969588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148137a94ed4e3649a1e575c568655ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
