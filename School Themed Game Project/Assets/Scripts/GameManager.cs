@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject firstBossFightWall, secondBossFightWall, player, flyingEnRight, flyingEnLeft, cronometer;
     [SerializeField] private Canvas restartScreen, victoryScreen;
-    [SerializeField] private float bossFightWallSpawnTrigger, flyingEnFirstSpawnPos, flyingEnSecondSpawnPos, enSpawnCd;
+    [SerializeField] private float bossFightWallSpawnTrigger, flyingEnFirstSpawnPos, flyingEnSecondSpawnPos, enSpawnCd, desactivateSpawnEnPosition;
     [SerializeField] private int stage;
+    private PlayerJump pj;
     private float spawnRate, timer;
     public bool startCronometer, isFighting;
     private bool won;
@@ -23,6 +24,12 @@ public class GameManager : MonoBehaviour
                 cronometer.SetActive(false);
                 secondBossFightWall.SetActive(false);
                 firstBossFightWall.SetActive(false);
+                restartScreen.gameObject.SetActive(false);
+                victoryScreen.gameObject.SetActive(false);
+                break;
+            case 2:
+                isFighting = false;
+                won = false;
                 restartScreen.gameObject.SetActive(false);
                 victoryScreen.gameObject.SetActive(false);
                 break;
@@ -45,7 +52,21 @@ public class GameManager : MonoBehaviour
                 }
                 if(isFighting && !won)
 				{
+                    RandomlySpawnFlyingEnemy();
+				}
+                checkPlayerIsAlive();
+                break;
+            case 2:
+                //Reaproveito a variavel de spawner da parede para triggar o spawn de inimigos voadores da segunda fase
+                if(player.transform.position.x >= bossFightWallSpawnTrigger && !won)
+				{
                     SpawnFlyingEnemy();
+				}
+                if(player.transform.position.x >= desactivateSpawnEnPosition && !won)
+				{
+                    pj = GameObject.Find("Player").GetComponent<PlayerJump>();
+                    pj.ableToMove = false;
+                    WinGame();
 				}
                 checkPlayerIsAlive();
                 break;
@@ -66,6 +87,17 @@ public class GameManager : MonoBehaviour
 		}
 	}
     private void SpawnFlyingEnemy()
+    {
+        timer = Time.time;
+        if (timer > spawnRate)
+        {
+            spawnRate = (timer + enSpawnCd);
+            float flyingEnSpawnPosY = Random.Range(-3, 5);
+            Vector2 spawnPos = new Vector2(flyingEnFirstSpawnPos, flyingEnSpawnPosY);
+            Instantiate(flyingEnRight, spawnPos, new Quaternion());
+        }
+    }
+    private void RandomlySpawnFlyingEnemy()
 	{
         timer = Time.time;
         if (timer > spawnRate)

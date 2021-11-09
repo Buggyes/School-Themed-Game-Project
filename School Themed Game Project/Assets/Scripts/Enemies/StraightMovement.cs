@@ -7,10 +7,6 @@ public class StraightMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rig;
     public bool isGoingRight;
-    void Start()
-    {
-        
-    }
     void Update()
     {
         if(isGoingRight)

@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: acf8ad4326ab3a440afbd54e31e52fed
+guid: 215bc3d929d146645b95c5242b3b9bd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6803223489722007895
-    second: Student_0
+      213: 5515996734357390674
+    second: JumpingBag_0
   - first:
-      213: -8853518268465421559
-    second: Student_1
+      213: -7807584425836286325
+    second: JumpingBag_1
   - first:
-      213: 3306462187232476412
-    second: Student_2
+      213: 4822113573790306362
+    second: JumpingBag_2
+  - first:
+      213: -9014881320451489453
+    second: JumpingBag_3
+  - first:
+      213: 2041717444500711362
+    second: JumpingBag_4
+  - first:
+      213: 6299910231560634171
+    second: JumpingBag_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,7 +145,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Student_0
+      name: JumpingBag_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aeb687f7481691a0800000000000000
-      internalID: -6803223489722007895
+      spriteID: 255469d0ec1cc8c40800000000000000
+      internalID: 5515996734357390674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Student_1
+      name: JumpingBag_1
       rect:
         serializedVersion: 2
         x: 192
@@ -171,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 903efa3fa0cf12580800000000000000
-      internalID: -8853518268465421559
+      spriteID: b8ee720c453e5a390800000000000000
+      internalID: -7807584425836286325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Student_2
+      name: JumpingBag_2
       rect:
         serializedVersion: 2
         x: 384
@@ -192,8 +201,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfcb04547d9e2ed20800000000000000
-      internalID: 3306462187232476412
+      spriteID: a305c582fb69be240800000000000000
+      internalID: 4822113573790306362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingBag_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3514f22b335b4e280800000000000000
+      internalID: -9014881320451489453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingBag_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7ee23c233a55c10800000000000000
+      internalID: 2041717444500711362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingBag_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f350d2af6cd6750800000000000000
+      internalID: 6299910231560634171
       vertices: []
       indices: 
       edges: []
