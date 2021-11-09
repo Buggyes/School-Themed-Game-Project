@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8deffad09d7604eb66e0a67486af4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   rig: {fileID: 7180075793528969598}
   isGoingRight: 1
 --- !u!114 &5093290649863237088

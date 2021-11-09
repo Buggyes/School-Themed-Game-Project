@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7180075793528969584, guid: c5f9b99108f9c004bafc3cd14ce6a995, type: 3}
       propertyPath: speed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7180075793528969584, guid: c5f9b99108f9c004bafc3cd14ce6a995, type: 3}
       propertyPath: isGoingRight
