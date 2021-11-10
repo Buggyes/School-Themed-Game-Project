@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
                 restartScreen.gameObject.SetActive(false);
                 victoryScreen.gameObject.SetActive(false);
                 break;
+            case 3:
+                isFighting = false;
+                won = false;
+                restartScreen.gameObject.SetActive(false);
+                victoryScreen.gameObject.SetActive(false);
+                break;
             default:
                 break;
 		}
@@ -67,6 +73,15 @@ public class GameManager : MonoBehaviour
                     pj.ableToMove = false;
                     WinGame();
 				}
+                checkPlayerIsAlive();
+                break;
+            case 3:
+                if (player.transform.position.x >= desactivateSpawnEnPosition && !won)
+                {
+                    pj = GameObject.Find("Player").GetComponent<PlayerJump>();
+                    pj.ableToMove = false;
+                    WinGame();
+                }
                 checkPlayerIsAlive();
                 break;
             default:

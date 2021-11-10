@@ -24,25 +24,23 @@ public class PlayerWalk : MonoBehaviour
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 plAn.SetBool("isRunning", true);
-                plRig.velocity = new Vector2(moveSpeed, plRig.velocity.y);
+                plRig.transform.Translate(Vector2.right * (Time.deltaTime * moveSpeed));
                 GetComponent<SpriteRenderer>().flipX = false;
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 plAn.SetBool("isRunning", true);
-                plRig.velocity = new Vector2(moveSpeed * -1, plRig.velocity.y);
+                plRig.transform.Translate(Vector2.left * (Time.deltaTime * moveSpeed));
                 GetComponent<SpriteRenderer>().flipX = true;
             }
             else
             {
                 plAn.SetBool("isRunning", false);
-                plRig.velocity = new Vector2(0, plRig.velocity.y);
             }
         }
         else
 		{
             plAn.SetBool("isRunning", false);
-            plRig.velocity = new Vector2(0, plRig.velocity.y);
         }
     }
 }

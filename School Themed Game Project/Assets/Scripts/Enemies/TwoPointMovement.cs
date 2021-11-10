@@ -21,11 +21,11 @@ public class TwoPointMovement : MonoBehaviour
 		{
             case true:
                 rig.velocity = new Vector2(speed, 0);
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = false;
                 break;
             case false:
                 rig.velocity = new Vector2(speed * -1, 0);
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = true;
                 break;
 		}
     }
