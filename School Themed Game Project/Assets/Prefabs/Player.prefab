@@ -199,5 +199,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e65d41695ce2e34481ea3331d5702cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask: 07000000
+  layerMask: 070000000a000000
   target: {fileID: 3538887925000693734}

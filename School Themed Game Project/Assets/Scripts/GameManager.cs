@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float bossFightWallSpawnTrigger, flyingEnFirstSpawnPos, flyingEnSecondSpawnPos, enSpawnCd, desactivateSpawnEnPosition;
     [SerializeField] private int stage;
     private PlayerJump pj;
+    private bool startedFight;
     private float spawnRate, timer;
     public bool startCronometer, isFighting, won;
     void Start()
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
         switch(stage)
 		{
             case 1:
+                startedFight = false;
                 startCronometer = false;
                 spawnRate = 0;
                 isFighting = false;
@@ -118,13 +120,20 @@ public class GameManager : MonoBehaviour
         {
             spawnRate = (timer + enSpawnCd);
             float randomizedSpawnLoc = Random.Range(0, 100);
-            if (randomizedSpawnLoc > 0 && randomizedSpawnLoc <= 49)
+            if (!startedFight)
+            {
+                float flyingEnSpawnPosY = Random.Range(8, 15);
+                Vector2 spawnPos = new Vector2(flyingEnSecondSpawnPos, flyingEnSpawnPosY);
+                Instantiate(flyingEnLeft, spawnPos, new Quaternion());
+                startedFight = true;
+            }
+            else if (randomizedSpawnLoc > 0 && randomizedSpawnLoc <= 49 && startedFight)
             {
                 float flyingEnSpawnPosY = Random.Range(8, 15);
                 Vector2 spawnPos = new Vector2(flyingEnFirstSpawnPos, flyingEnSpawnPosY);
                 Instantiate(flyingEnRight, spawnPos, new Quaternion());
             }
-            else if (randomizedSpawnLoc >= 50)
+            else if (randomizedSpawnLoc >= 50 && startedFight)
             {
                 float flyingEnSpawnPosY = Random.Range(8, 15);
                 Vector2 spawnPos = new Vector2(flyingEnSecondSpawnPos, flyingEnSpawnPosY);

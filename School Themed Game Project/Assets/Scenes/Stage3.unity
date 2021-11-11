@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 1401627693}
   - component: {fileID: 1401627692}
   - component: {fileID: 1401627691}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: CementFloorWithWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2533,6 +2533,14 @@ PrefabInstance:
     - target: {fileID: 3538887925000693734, guid: fc869f5c81e54594088d71285a86a700, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538887925000693740, guid: fc869f5c81e54594088d71285a86a700, type: 3}
+      propertyPath: jumpStr
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538887925000693740, guid: fc869f5c81e54594088d71285a86a700, type: 3}
+      propertyPath: speedLimit
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc869f5c81e54594088d71285a86a700, type: 3}
